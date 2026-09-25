@@ -9,6 +9,7 @@ Licenciatura en Sistemas de Información — Diseño UX-UI 2026
 Se resolvieron todos los ejercicios del Bloque 1:
 
 - **Ejercicio 1** — Estructura HTML básica
+- **Ejercicio 2** — Lista enlaces
 - **Ejercicio 3** — Tabla de datos (horario semanal)
 - **Ejercicio 4** — Formulario simple
 - **Ejercicio 5** — Primeros estilos CSS
