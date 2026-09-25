@@ -6,7 +6,7 @@ Licenciatura en Sistemas de Información — Diseño UX-UI 2026
 
 ### Bloque 1 — Nivel Básico
 
-Se resolvieron todos los ejercicios del Bloque 1, **excepto el Ejercicio 2**:
+Se resolvieron todos los ejercicios del Bloque 1:
 
 - **Ejercicio 1** — Estructura HTML básica
 - **Ejercicio 3** — Tabla de datos (horario semanal)
@@ -105,7 +105,3 @@ separados, tal como piden las instrucciones generales.
   quedó dividido en secciones comentadas (variables, header, hero,
   servicios, testimonios, contacto, footer, media queries) según pide
   el criterio de organización.
-
-## Pendiente
-
-El Ejercicio 2 (listas y enlaces) no forma parte de esta entrega.
