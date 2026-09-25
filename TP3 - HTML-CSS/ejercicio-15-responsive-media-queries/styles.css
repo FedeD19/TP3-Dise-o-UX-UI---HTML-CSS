@@ -1,0 +1,124 @@
+/*
+  Enfoque: DESKTOP FIRST.
+  Se justifica porque este layout parte del Ejercicio 10 (pensado para
+  un panel de escritorio con sidebar fija) y solo se necesita simplificar
+  la estructura en pantallas chicas, no construir la versión mobile desde
+  cero. Por eso los estilos base son los de escritorio y las media queries
+  usan max-width para ir "recortando" el layout a medida que se achica.
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  color: #1F2937;
+}
+
+.layout {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header  header"
+    "sidebar contenido"
+    "footer  footer";
+}
+
+.header {
+  grid-area: header;
+  background-color: #2C3E50;
+  color: #FFFFFF;
+  padding: 1rem 2rem;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #EEF1F6;
+  padding: 1.5rem 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sidebar a {
+  color: #2C3E50;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.sidebar a:hover {
+  color: #3E8E7E;
+}
+
+.contenido {
+  grid-area: contenido;
+  padding: 1.5rem 2rem;
+  max-width: 100%;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #2C3E50;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* Breakpoint 1: tablets y celulares grandes -> el sidebar desaparece
+   y el grid pasa a una sola columna */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "contenido"
+      "footer";
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .contenido {
+    padding: 1.25rem;
+  }
+}
+
+/* Breakpoint 2: celulares chicos -> se ajustan tipografías y espaciados */
+@media (max-width: 480px) {
+  .header {
+    padding: 0.85rem 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.15rem;
+  }
+
+  .contenido {
+    padding: 1rem;
+  }
+
+  .contenido h2 {
+    font-size: 1.1rem;
+  }
+}

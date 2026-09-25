@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 3 - Tabla de datos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Horario semanal de clases</h1>
+  </header>
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Hora</th>
+          <th scope="col">Lunes</th>
+          <th scope="col">Martes</th>
+          <th scope="col">Miércoles</th>
+          <th scope="col">Jueves</th>
+          <th scope="col">Viernes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">08:00 - 10:00</th>
+          <td rowspan="2">Algoritmos y Estructuras de Datos</td>
+          <td>Programación Orientada a Objetos</td>
+          <td>—</td>
+          <td>Fundamentos de la Programación</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <th scope="row">10:00 - 12:00</th>
+          <td>—</td>
+          <td>Diseño UX-UI</td>
+          <td>Programación Orientada a Objetos</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <th scope="row">14:00 - 16:00</th>
+          <td>Fundamentos de la Programación</td>
+          <td>—</td>
+          <td>—</td>
+          <td>Algoritmos y Estructuras de Datos</td>
+          <td>Diseño UX-UI</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="6">Total de horas semanales de cursada: 14 hs</td>
+        </tr>
+      </tfoot>
+    </table>
+  </main>
+</body>
+</html>

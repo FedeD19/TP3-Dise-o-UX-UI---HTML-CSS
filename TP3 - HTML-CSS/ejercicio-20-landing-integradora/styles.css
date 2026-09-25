@@ -1,0 +1,341 @@
+/* ============================================================
+   VARIABLES
+   ============================================================ */
+:root {
+  --color-primario: #2C3E50;
+  --color-secundario: #3E8E7E;
+  --color-fondo: #F5F6F8;
+  --color-texto: #1F2937;
+  --color-tarjeta: #FFFFFF;
+  --espaciado: 1.25rem;
+  --radio: 10px;
+  --alto-header: 64px;
+}
+
+/* ============================================================
+   RESET Y BASE
+   ============================================================ */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+}
+
+h1, h2, h3 {
+  color: var(--color-primario);
+  margin: 0 0 0.5rem;
+}
+
+section {
+  scroll-margin-top: var(--alto-header);
+  padding: 3rem 1.5rem;
+}
+
+/* ============================================================
+   ANIMACIÓN (reutilizada en servicios y testimonios)
+   ============================================================ */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   HEADER / NAVBAR (fija, con Flexbox)
+   ============================================================ */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--alto-header);
+  background-color: var(--color-primario);
+  z-index: 100;
+}
+
+.nav-contenido {
+  max-width: 1100px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+  color: var(--color-secundario);
+}
+
+/* ============================================================
+   HERO (sección con imagen de fondo)
+   ============================================================ */
+.hero {
+  margin-top: var(--alto-header);
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    linear-gradient(135deg, rgba(44, 62, 80, 0.88), rgba(62, 142, 126, 0.82)),
+    url("img/hero-bg.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-contenido {
+  max-width: 560px;
+  color: #FFFFFF;
+  animation: aparecer 0.7s ease-out both;
+}
+
+.hero-contenido h1 {
+  color: #FFFFFF;
+  font-size: 2rem;
+}
+
+.hero-contenido p {
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-cta {
+  display: inline-block;
+  background-color: var(--color-secundario);
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.btn-cta:hover {
+  background-color: #34795F;
+}
+
+/* ============================================================
+   SERVICIOS (CSS Grid)
+   ============================================================ */
+.servicios {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.grid-servicios {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--espaciado);
+}
+
+.servicio {
+  background-color: var(--color-tarjeta);
+  border: 1px solid #E2E8F0;
+  border-radius: var(--radio);
+  padding: var(--espaciado);
+  text-align: center;
+  opacity: 0;
+  animation: aparecer 0.6s ease-out forwards;
+}
+
+.servicio:nth-child(1) { animation-delay: 0s; }
+.servicio:nth-child(2) { animation-delay: 0.1s; }
+.servicio:nth-child(3) { animation-delay: 0.2s; }
+.servicio:nth-child(4) { animation-delay: 0.3s; }
+
+.icono {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.servicio p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ============================================================
+   TESTIMONIOS (carrusel con scroll-snap, Flexbox)
+   ============================================================ */
+.testimonios {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.carrusel {
+  display: flex;
+  gap: var(--espaciado);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.75rem;
+}
+
+.testimonio {
+  flex: 0 0 260px;
+  scroll-snap-align: start;
+  background-color: var(--color-tarjeta);
+  border: 1px solid #E2E8F0;
+  border-radius: var(--radio);
+  padding: var(--espaciado);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-secundario);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.testimonio p {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.autor {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--color-primario);
+  font-weight: bold;
+}
+
+/* ============================================================
+   CONTACTO (formulario)
+   ============================================================ */
+.contacto {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.campo label {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.campo input,
+.campo textarea {
+  padding: 0.6rem 0.8rem;
+  border: 2px solid #CBD5E1;
+  border-radius: 8px;
+  font: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--color-secundario);
+}
+
+.form-contacto button {
+  align-self: flex-start;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 999px;
+  background-color: var(--color-primario);
+  color: #FFFFFF;
+  font: inherit;
+  cursor: pointer;
+}
+
+.form-contacto button:hover {
+  background-color: var(--color-secundario);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: var(--color-primario);
+  color: #FFFFFF;
+  font-size: 0.85rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* ============================================================
+   MEDIA QUERIES (responsividad, desktop-first)
+   ============================================================ */
+@media (max-width: 900px) {
+  .grid-servicios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    gap: 0.9rem;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+  .hero-contenido h1 {
+    font-size: 1.5rem;
+  }
+
+  .grid-servicios {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonio {
+    flex-basis: 220px;
+  }
+}

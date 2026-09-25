@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 2rem;
+  color: #1F2937;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 720px;
+}
+
+caption {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+th,
+td {
+  border: 1px solid #CBD5E1;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+}
+
+thead th {
+  background-color: #2C3E50;
+  color: #FFFFFF;
+}
+
+tbody th[scope="row"] {
+  background-color: #EEF1F6;
+}
+
+tfoot td {
+  font-weight: bold;
+  background-color: #F5F6F8;
+  text-align: center;
+}

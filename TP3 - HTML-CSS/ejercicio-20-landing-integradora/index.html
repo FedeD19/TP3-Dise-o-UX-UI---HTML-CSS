@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 20 - Proyecto integrador: Landing Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-contenido">
+      <span class="logo">DevFede</span>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-contenido">
+        <h1>Aprendé a programar con una base sólida</h1>
+        <p>Cursos, recursos y acompañamiento para estudiantes de la Licenciatura en Sistemas de Información.</p>
+        <a href="#servicios" class="btn-cta">Ver servicios</a>
+      </div>
+    </section>
+
+    <section id="servicios" class="servicios">
+      <h2>Servicios</h2>
+      <div class="grid-servicios">
+        <article class="servicio">
+          <span class="icono" aria-hidden="true">💻</span>
+          <h3>Desarrollo web</h3>
+          <p>Sitios y aplicaciones a medida, maquetados con HTML semántico y CSS moderno.</p>
+        </article>
+        <article class="servicio">
+          <span class="icono" aria-hidden="true">🎨</span>
+          <h3>Diseño UX-UI</h3>
+          <p>Interfaces claras y accesibles, pensadas primero para quien las usa.</p>
+        </article>
+        <article class="servicio">
+          <span class="icono" aria-hidden="true">📚</span>
+          <h3>Clases particulares</h3>
+          <p>Apoyo en Algoritmos, POO y Fundamentos de la Programación.</p>
+        </article>
+        <article class="servicio">
+          <span class="icono" aria-hidden="true">🛠️</span>
+          <h3>Consultoría técnica</h3>
+          <p>Revisión de código y buenas prácticas para proyectos en curso.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="testimonios" class="testimonios">
+      <h2>Testimonios</h2>
+      <div class="carrusel">
+        <article class="testimonio">
+          <div class="avatar">M</div>
+          <p>"Entendí Flexbox y Grid en una sola tarde. Explicaciones muy claras."</p>
+          <span class="autor">— Martina, estudiante de 2º año</span>
+        </article>
+        <article class="testimonio">
+          <div class="avatar">L</div>
+          <p>"Las clases de POO me ayudaron a aprobar el parcial sin vueltas."</p>
+          <span class="autor">— Lucas, estudiante de 1º año</span>
+        </article>
+        <article class="testimonio">
+          <div class="avatar">S</div>
+          <p>"Buenísima la consultoría para ordenar mi proyecto final."</p>
+          <span class="autor">— Sofía, estudiante avanzada</span>
+        </article>
+        <article class="testimonio">
+          <div class="avatar">N</div>
+          <p>"Recomendable para reforzar Algoritmos y Estructuras de Datos."</p>
+          <span class="autor">— Nicolás, estudiante de 2º año</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+      <h2>Contacto</h2>
+      <form action="#" method="post" class="form-contacto">
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="campo">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="campo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        </div>
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 DevFede — Proyecto integrador, Diseño UX-UI</p>
+  </footer>
+</body>
+</html>

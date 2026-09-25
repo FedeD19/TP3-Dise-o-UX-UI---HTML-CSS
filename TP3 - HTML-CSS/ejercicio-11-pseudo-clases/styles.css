@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 2rem;
+  color: #1F2937;
+}
+
+.lista-recursos {
+  list-style: none;
+  max-width: 420px;
+  margin: 0;
+  padding: 0;
+}
+
+.lista-recursos li {
+  border-bottom: 1px solid #E2E8F0;
+}
+
+/* Pseudo-elemento: ícono decorativo antes de cada enlace */
+.lista-recursos li::before {
+  content: "▸";
+  color: #3E8E7E;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.lista-recursos a {
+  display: inline-block;
+  padding: 0.75rem 0;
+  color: #2C3E50;
+  text-decoration: none;
+}
+
+/* Pseudo-clase: color al pasar el mouse */
+.lista-recursos a:hover {
+  color: #3E8E7E;
+  text-decoration: underline;
+}
+
+/* Pseudo-clase: resalta los elementos pares de la lista */
+.lista-recursos li:nth-child(even) {
+  background-color: #F5F6F8;
+}

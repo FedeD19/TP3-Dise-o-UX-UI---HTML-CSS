@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 2rem auto;
+  max-width: 420px;
+  color: #1F2937;
+}
+
+h1 {
+  color: #2C3E50;
+  font-size: 1.4rem;
+}
+
+/* Los radios que controlan el paso quedan ocultos: solo se usan como estado */
+.paso-radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Indicador de pasos */
+.indicador {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.punto {
+  font-size: 0.8rem;
+  color: #6B7280;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid #E2E8F0;
+  cursor: pointer;
+}
+
+/* Se resalta el paso activo según qué radio esté marcado */
+#paso1:checked ~ .indicador label[for="paso1"],
+#paso2:checked ~ .indicador label[for="paso2"] {
+  color: #2C3E50;
+  font-weight: bold;
+  border-bottom-color: #3E8E7E;
+}
+
+.formulario {
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  font-weight: bold;
+  color: #2C3E50;
+  margin-bottom: 0.75rem;
+  padding: 0;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-size: 0.9rem;
+}
+
+input {
+  padding: 0.55rem 0.7rem;
+  border: 2px solid #CBD5E1;
+  border-radius: 6px;
+  font: inherit;
+  transition: border-color 0.2s ease;
+}
+
+/* Validación visual: solo se colorea una vez que el campo tiene contenido
+   (":not(:placeholder-shown)" evita marcar error antes de que el usuario escriba) */
+input:required:not(:placeholder-shown):invalid {
+  border-color: #DC2626;
+}
+
+input:required:not(:placeholder-shown):valid {
+  border-color: #16A34A;
+}
+
+/* Paso 2 oculto por defecto; se muestra cuando su radio está marcado */
+.paso-dos {
+  display: none;
+}
+
+#paso2:checked ~ .formulario .paso-dos {
+  display: block;
+}
+
+#paso2:checked ~ .formulario .paso-uno {
+  display: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.55rem 1.2rem;
+  border: none;
+  border-radius: 999px;
+  background-color: #2C3E50;
+  color: #FFFFFF;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #3E8E7E;
+}
+
+.acciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.btn-atras {
+  background-color: transparent;
+  color: #2C3E50;
+  border: 2px solid #2C3E50;
+}
+
+.btn-atras:hover {
+  background-color: #EEF1F6;
+}

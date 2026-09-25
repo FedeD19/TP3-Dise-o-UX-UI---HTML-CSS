@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  color: #1F2937;
+}
+
+main {
+  padding: 1.5rem 2rem;
+  max-width: 500px;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #2C3E50;
+}
+
+.logo {
+  color: #FFFFFF;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* El checkbox real queda oculto: solo funciona como interruptor */
+.menu-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Ícono de hamburguesa (3 barras), oculto en pantallas grandes */
+.menu-icono {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-icono span {
+  width: 26px;
+  height: 3px;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+}
+
+.nav-links ul {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  color: #3E8E7E;
+}
+
+/* En pantallas chicas: se muestra el ícono y el menú se colapsa */
+@media (max-width: 600px) {
+  .menu-icono {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #2C3E50;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0.5rem 2rem 1rem;
+  }
+
+  .nav-links li {
+    padding: 0.5rem 0;
+  }
+
+  /* Truco del checkbox: al marcarlo, se despliega el menú */
+  .menu-toggle:checked ~ .nav-links {
+    max-height: 240px;
+  }
+}

@@ -1,0 +1,43 @@
+/* Selector de etiqueta */
+body {
+  font-family: system-ui, sans-serif;
+  margin: 2rem auto;
+  max-width: 640px;
+  color: #1F2937;
+  background-color: #FAFAFA;
+}
+
+/* Selector de ID */
+#intro {
+  border-bottom: 2px solid #2C3E50;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Selector de clase */
+.card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/* Selector descendiente: solo los h2 dentro de .card */
+.card h2 {
+  color: #2C3E50;
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
+/* Selector descendiente: solo los p dentro de .card */
+.card p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+/* Selector de clase, reutilizado dentro de #intro y de .card */
+.destacado {
+  color: #3E8E7E;
+  font-weight: bold;
+}

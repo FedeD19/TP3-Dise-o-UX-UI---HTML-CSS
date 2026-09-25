@@ -1,0 +1,12 @@
+/* Ejercicio 1: el foco de este ejercicio es la estructura HTML.
+   Se deja únicamente un reset mínimo; el trabajo de estilos
+   (tipografía, colores, tamaño de fuente) se realiza en el Ejercicio 5,
+   que reutiliza esta misma página. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 2rem;
+}

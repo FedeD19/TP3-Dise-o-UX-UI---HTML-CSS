@@ -1,0 +1,87 @@
+:root {
+  --color-primario: #2C3E50;
+  --color-secundario: #3E8E7E;
+  --color-fondo: #F5F6F8;
+  --color-texto: #1F2937;
+  --color-tarjeta: #FFFFFF;
+  --espaciado: 1.25rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+}
+
+/* El checkbox de modo oscuro se oculta: solo se usa como interruptor */
+.toggle-oscuro {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pagina {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  min-height: 100vh;
+  padding: var(--espaciado);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--espaciado);
+}
+
+.topbar h1 {
+  color: var(--color-primario);
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.switch {
+  cursor: pointer;
+  padding: 0.4rem 0.9rem;
+  border: 2px solid var(--color-secundario);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--color-secundario);
+}
+
+.tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaciado);
+}
+
+.card {
+  flex: 1 1 200px;
+  background-color: var(--color-tarjeta);
+  border: 1px solid var(--color-secundario);
+  border-radius: 8px;
+  padding: var(--espaciado);
+}
+
+.card h2 {
+  color: var(--color-primario);
+  font-size: 1.05rem;
+  margin-top: 0;
+}
+
+.card p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+/* Modo oscuro: se redefinen las variables cuando el checkbox está marcado */
+#modo-oscuro:checked ~ .pagina {
+  --color-fondo: #1F2937;
+  --color-texto: #F5F6F8;
+  --color-tarjeta: #2C3E50;
+  --color-primario: #8FB4DD;
+}

@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0 auto;
+  max-width: 640px;
+  padding: 2rem;
+  color: #1F2937;
+}
+
+header h1 {
+  color: #2C3E50;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+section {
+  margin-bottom: 1.5rem;
+}
+
+section h2 {
+  color: #2C3E50;
+  font-size: 1.1rem;
+}
+
+/* Contenedor de referencia para el tooltip */
+.tooltip-contenedor {
+  position: relative;
+  display: inline-block;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #3E8E7E;
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  cursor: help;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2C3E50;
+  color: #FFFFFF;
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+}
+
+.tooltip-contenedor:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Botón "volver arriba" fijo en la esquina inferior derecha */
+.volver-arriba {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #2C3E50;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.3rem;
+  z-index: 20;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.volver-arriba:hover {
+  background-color: #3E8E7E;
+}
